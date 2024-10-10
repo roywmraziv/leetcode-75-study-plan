@@ -29,10 +29,13 @@ import java.util.*;
 public class DecodeString {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		String[] test_cases = {"3[a]2[bc]", "3[a2[c]]", "2[abc]3[cd]ef"};
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.printf("Test case %d: %s Solution: %s \n", i, test_cases[i], decodeString(test_cases[i]) );
+		}
 	}
-	public String decodeString(String s) {
+	public static String decodeString(String s) {
 		
 		Stack <Integer> num_stack = new Stack<>();
         Stack <String> str_stack = new Stack<>();
@@ -41,7 +44,6 @@ public class DecodeString {
         String ss = "";
         int num;
         String ps;
-        String final_string = "";
 
         for(char c: s.toCharArray()){
             if(Character.isDigit(c)){
